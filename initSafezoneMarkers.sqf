@@ -22,7 +22,7 @@ _noCombatMarkerClassname = "Sign_Sphere200cm_Geometry_F"; //---classname for saf
 _traderMarkerName = "ExileTraderZoneIcon";
 /*End Config*/
 
-TWServer_createSafezoneMarkers = compile preprocessFileLineNumbers "TWClient\custom\SafezoneMarkers\createSafezoneMarkers.sqf";
+SM_createSafezoneMarkers = compile preprocessFileLineNumbers "custom\SafezoneMarkers\createSafezoneMarkers.sqf";
 
 if(_safezoneMarkers || _noCombatMarkers) then 
 {
@@ -32,11 +32,11 @@ if(_safezoneMarkers || _noCombatMarkers) then
 			_markerPos = getMarkerPos _x;
 			if(_safezoneMarkers) then
 			{
-				[_markerPos, _safezoneRadius, _safezoneMarkerClassname, _x, "Safezone"] call TWServer_createSafezoneMarkers;
+				[_markerPos, _safezoneRadius, _safezoneMarkerClassname, _x, "Safezone"] call SM_createSafezoneMarkers;
 			};
 			if(_noCombatMarkers) then
 			{
-				[_markerPos, _noCombatRadius, _noCombatMarkerClassname, _x, "No Combat"] call TWServer_createSafezoneMarkers;
+				[_markerPos, _noCombatRadius, _noCombatMarkerClassname, _x, "No Combat"] call SM_createSafezoneMarkers;
 			};
 		};
 	} forEach allMapMarkers;
