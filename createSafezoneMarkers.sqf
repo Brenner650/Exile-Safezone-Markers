@@ -20,7 +20,7 @@ for '_i' from 0 to 360 step (1440 / _radius) do
 	_marker setPosATL _location;
 	_count = _count + 1;
 };
-diag_log format ["Create %1 %2 Marker(s) for %3 at %4", _count, _markerType, _markerTitle, _pos];
+diag_log format ["SZ_Markers: Created %1 %2 Marker(s) for %3 at %4", _count, _markerType, _markerTitle, _pos];
 
 
 
